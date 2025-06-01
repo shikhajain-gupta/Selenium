@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,8 +13,10 @@ public class login {
     public static void main(String[] args) throws InterruptedException {
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.get("https://crio-qkart-frontend-qa.vercel.app/");
-        Thread.sleep(3000);
+
+       // Thread.sleep(3000);
 
 
         WebElement register = driver.findElement(By.xpath("//div[@class='css-vb6e92']/button[text()='Register']"));
@@ -23,27 +26,27 @@ public class login {
         //div[@class='css-vb6e92']/button[text()='Register']
 
         register.click();
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
 
-        driver.findElement(By.id("username")).sendKeys("shikhatest4");
-        Thread.sleep(1000);
-        driver.findElement(By.id("password")).sendKeys("shikhatest4");
-        Thread.sleep(1000);
-        driver.findElement(By.id("confirmPassword")).sendKeys("shikhatest4");
-        Thread.sleep(1000);
+        driver.findElement(By.id("username")).sendKeys("shikhatest7");
+        //Thread.sleep(1000);
+        driver.findElement(By.id("password")).sendKeys("shikhatest7");
+       // Thread.sleep(1000);
+        driver.findElement(By.id("confirmPassword")).sendKeys("shikhatest7");
+        //Thread.sleep(1000);
         driver.findElement(By.xpath("//div[@class='form css-ikzlcq']/button[1]")).click();
         //div[@class='form css-ikzlcq']/button[1]
-        Thread.sleep(3000);
+        //Thread.sleep(3000);
 
         String url = driver.getCurrentUrl();
         if (url.contains("login")) {
             System.out.println("You are registered successfully");
-            driver.findElement(By.id("username")).sendKeys("shikhatest4");
-            Thread.sleep(1000);
-            driver.findElement(By.id("password")).sendKeys("shikhatest4");
-            Thread.sleep(1000);
+            driver.findElement(By.id("username")).sendKeys("shikhatest7");
+           // Thread.sleep(1000);
+            driver.findElement(By.id("password")).sendKeys("shikhatest7");
+           // Thread.sleep(1000);
             driver.findElement(By.xpath("//div[@class='form css-ikzlcq']/button")).click();
-            Thread.sleep(3000);
+           // Thread.sleep(3000);
             String name = driver.findElement(By.xpath("//div[@class='css-vb6e92']/p")).getText();
             System.out.println(name + " is logged in");
 
