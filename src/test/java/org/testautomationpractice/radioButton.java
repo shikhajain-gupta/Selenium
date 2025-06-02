@@ -1,4 +1,4 @@
-package org.testautomationpractice.testLogin;
+package org.testautomationpractice;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
