@@ -24,11 +24,10 @@ public class search {
         search.sendKeys("selenium");
         WebElement searchButton = driver.findElement(By.xpath("//input[@class='wikipedia-search-button']"));
         searchButton.click();
-        //Thread.sleep(3000);
 
         //List<WebElement> searchResults = driver.findElements(By.xpath("//div[@id='Wikipedia1_wikipedia-search-results']/descendant::a"));
         WebDriverWait searchWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        List<WebElement> searchResults= searchWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@id='Wikipedia1_wikipedia-search-results']/descendant::a")));
+        List<WebElement> searchResults= searchWait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//div[@class='wikipedia-search-main-container']/descendant::div/a[@target= '_blank']")));
 
 
         for (WebElement a : searchResults) {

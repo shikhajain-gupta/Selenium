@@ -3,8 +3,16 @@
     <test name="MyTest">
 
         <classes>
-            <class name="org.testautomationpractice.search"/>
-<!--           <class name="org.testautomationpractice.radioButton"/>-->
+            <!--            <class name="org.testautomationpractice.search"/>-->
+<!--                       <class name="org.testautomationpractice.checkbox"/>-->
+            <class name="org.testautomationpractice.Alert1"/>
+                <methods>
+                    <include name="simpleAlert"/>
+                    <include name="confirmationButton"/>
+                    <exclude name="promptButton"/>
+                </methods>
         </classes>
+
+
     </test>
 </suite>
