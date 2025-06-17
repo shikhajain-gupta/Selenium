@@ -2,9 +2,17 @@
 <suite name="MyTestSuite">
     <test name="MyTest">
 
+        <groups>
+            <run>
+                <include name="sanity"/>
+                <exclude name="regression"/>
+
+            </run>
+        </groups>
+        <parameter name="browser" value="chrome"/>
         <classes>
-            <!--            <class name="org.testautomationpractice.search"/>-->
-<!--                       <class name="org.testautomationpractice.checkbox"/>-->
+                        <class name="org.testautomationpractice.search"/>
+                       <class name="org.testautomationpractice.checkbox"/>
             <class name="org.testautomationpractice.Alert1"/>
                 <methods>
                     <include name="simpleAlert"/>

@@ -12,7 +12,7 @@ import java.time.Duration;
 
 public class Alert1 {
 
-    @Test(description="verifying simple alert function", priority = 0, dependsOnMethods = ("confirmationButton"))
+    @Test(description="verifying simple alert function", priority = 0, dependsOnMethods = ("confirmationButton"), alwaysRun = true)
 
     public void simpleAlert(){
 //        WebDriver driver= new ChromeDriver();
@@ -48,7 +48,9 @@ public class Alert1 {
         WebElement confirmAlertButton= driver.findElement(By.id("confirmBtn"));
         confirmAlertButton.click();
         driver.switchTo().alert().dismiss();
-        WebElement popuptext = driver.findElement(By.xpath("//p[@id='demo']"));
+        //WebElement popuptext = driver.findElement(By.xpath("//p[@id='demo']"));
+        //to make tc fail
+        WebElement popuptext = driver.findElement(By.xpath("//p[@id='demo1']"));
         String text = popuptext.getText();
         System.out.println(text);
         Assert.assertEquals(text,"You pressed Cancel!");
@@ -65,7 +67,10 @@ public class Alert1 {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         WebElement promptAlertButton= driver.findElement(By.id("promptBtn"));
         promptAlertButton.click();
-        driver.switchTo().alert().sendKeys("test");
+        Alert a= driver.switchTo().alert();
+                a.sendKeys("test");
+                a.accept();
+
 
 
 //        WebElement popuptext = driver.findElement(By.xpath("//p[@id='demo']"));
