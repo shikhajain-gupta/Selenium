@@ -38,6 +38,7 @@ public class BrokenLinks {
                     } else {
                         System.out.println(s + "  is not broken link with response code  " + connect.getResponseCode());
                     }
+                    connect.disconnect();
                 }
             }
             catch (Exception e){
